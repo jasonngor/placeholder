@@ -2,6 +2,7 @@ import os
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
+from werkzeug import generate_password_hash, check_password_hash
 
 app = Flask(__name__) # create the application instance
 app.config.from_object(__name__) # load config from this file, liketwitter.py
@@ -50,3 +51,16 @@ def initdb_command():
 def home():
     """Takes user to index.html"""
     return render_template("index.html")
+
+@app.route('/signup')
+def signup():
+    """Takes user to signup.html"""
+    return render_template("signup.html")
+
+@app.route("/signup", methods=["POST"])
+def adduser():
+    db = get_db()
+    db.execute("insert into user (username, password) values (?, ?)", [request.form["username"], request.form["password"]])
+    db.commit()
+    flash("New user added.")
+    return redirect(url_for("home"))

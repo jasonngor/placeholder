@@ -14,7 +14,7 @@ create table user (
 );
 
 drop table if exists follower;
-create table follwer(
+create table follower(
 	follower_id integer,
 	following_id integer
 );
