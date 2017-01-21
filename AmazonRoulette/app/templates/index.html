@@ -8,8 +8,8 @@ html {
 }
 
 body {
-  height = 100%;
-  background: linear-gradient(180deg, #2F4F4F 50%, #A9A9A9 50%);
+  height = 100;
+  background: linear-gradient(0deg, #2F4F4F 50%, #A9A9A9 50%);
 
   /*background: #2F4F4F;*/
 }
@@ -18,18 +18,19 @@ body {
   background-color: #393f47; /* Bluish-Gray */
   border: none;
   position: center;
-  top:40%;
+
   color: white;
   padding: 10px 10px;
   font-family: "Verdana", Sans-serif;
   margin: 0 auto;
-  text-align:center;
+  text-align: center;
   text-decoration: none;
   display: inline-block;
   width: 20em;
   height: 4em;
   font-size: 25px;
-  margin-top: 2.5em;
+  margin-top: -10.00em;
+  margin-left: -10.00em;
 }
 
 h1 {
@@ -49,10 +50,30 @@ p1 {
 
   color: white;
   font-family: "Arial";
-  font-size: 20px;
+  font-size: 25px;
+  position: relative;
+  bottom: -15.00em;
+  text-align: center;
+  text-decoration: italic;
+
 
 }
 
+ul {
+
+  color: white;
+  font-family: "Arial";
+  font-size: 20px;
+  text-align: right;
+  position: relative;
+  bottom: -18.00em;
+  direction: rtl;
+
+}
+
+ul li a {
+  direction: ltr; unicode-bidi: embed;
+}
 
 
 </style>
@@ -61,16 +82,13 @@ p1 {
     <h1 align="center"> Amazon Roulette </h1>
       <h2 align = "center">  Are you feeling rich and lucky?? </h2>
 
-<<<<<<< HEAD
-      <link rel = "stylesheet" type = "css" href = "styleSheet.css">
-=======
     <link rel = "stylesheet" type = "text/css" href = "styleSheet.css">
     <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
     <script src="../static/ajax.js"></script>
->>>>>>> origin/master
+
 </head>
 
 <body>
@@ -79,20 +97,25 @@ p1 {
         <button class="button">Sign Into Your Amazon Account</button>
     </div>
 
-    <p1>
-     Ever wanted to buy something on Amazon, not knowing what is is? <br>
-     Well, now's your chance <br>
-     Our revolutionary site does just that:
-   </p1>
+    <div class="wrapper">
+      <p1>
+        <br>
+        Ever wanted to buy something on Amazon, not knowing what is is? <br> <br>
+        Well, now's your chance <br> <br>
+        Our revolutionary site does just that:
+      </p1>
+    </div>
 
+<div class="wrapper">
     <ul>
-        <li> Log into your amazon account </li>;
-        <li> Select the filters you want to contain your search into </li>;
-        <li> Voilaa ... Your package will be in the mail soon! </li>;
+        <br> <br> <li> Log into your amazon account </li> <br>
+        <li> Select the filters you want to contain your search into </li> <br>
+        <li> Voilaa ... Your package will be in the mail soon! </li> <br>
    </ul>
+</div>
 
 
-  <button onclick="getProduct()">Get Product</button>
+  <!-- <button onclick="getProduct()">Get Product</button>
 
 </body>
 
