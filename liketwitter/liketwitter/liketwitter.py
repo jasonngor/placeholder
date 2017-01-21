@@ -50,3 +50,8 @@ def initdb_command():
 def home():
     """Takes user to index.html"""
     return render_template("index.html")
+
+@app.route('/login')
+def login():
+    """Takes user to login.html"""
+    return render_template("login.html")
