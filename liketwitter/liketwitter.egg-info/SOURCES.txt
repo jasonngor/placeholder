@@ -7,3 +7,6 @@ liketwitter.egg-info/SOURCES.txt
 liketwitter.egg-info/dependency_links.txt
 liketwitter.egg-info/requires.txt
 liketwitter.egg-info/top_level.txt
+liketwitter/static/test
+liketwitter/templates/index.html
+liketwitter/templates/test
