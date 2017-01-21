@@ -1,26 +1,9 @@
 import os
-import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
-from werkzeug import generate_password_hash, check_password_hash
 from amazon.api import AmazonAPI
 from random import randint
 import json
-
-# import os
-# from amazon.api import AmazonAPI
-# os.chdir("..") # change to file path
-#
-# f = open("pswd.txt", "r")
-# st = f.read(200).strip("\n").split(" ")
-#
-# AMAZON_ACCESS_KEY = st[0]
-# AMAZON_SECRET_KEY = st[1]
-# AMAZON_ASSOC_TAG  = st[2]
-#
-# amazon = AmazonAPI(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_ASSOC_TAG)
-# product = amazon.lookup(ItemId='B00EOE0WKQ')
-# print(product.title)
 
 app = Flask(__name__) # create the application instance
 app.config.from_object(__name__) # load config from this file, liketwitter.py
@@ -38,6 +21,23 @@ app.config.from_envvar('AMAZONROULETTE_SETTINGS', silent=True)
 @app.route("/")
 def home():
     return render_template("index.html")
+
+def initAmazon():
+    # os.chdir("..") # change to file path
+    # os.chdir("..") # change to file path
+    # os.chdir("..") # change to file path
+    f = open("pswd.txt", "r")
+    st = f.read(200).strip("\n").split(" ")
+    # os.chdir("placeholder")
+    # os.chdir("AmazonRoulette")
+    # os.chdir("AmazonRoulette")
+
+    AMAZON_ACCESS_KEY = st[0]
+    AMAZON_SECRET_KEY = st[1]
+    AMAZON_ASSOC_TAG  = st[2]
+
+    amazon = AmazonAPI(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_ASSOC_TAG)
+    return amazon
 
 @app.route("/get-product", methods=[GET])
 def getproduct():
