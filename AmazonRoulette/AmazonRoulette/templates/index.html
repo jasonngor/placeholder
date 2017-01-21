@@ -2,28 +2,95 @@
 <html lang = "en"> <!-- Language parameters -->
 
 <style>
-body {
-  background-color: white
+
+html {
+  height: 100%
 }
+
+body {
+  height = 100%;
+  background: linear-gradient(180deg, #2F4F4F 50%, #A9A9A9 50%);
+
+  /*background: #2F4F4F;*/
+}
+
+.button {
+  background-color: #393f47; /* Bluish-Gray */
+  border: none;
+  position: center;
+  top:40%;
+  color: white;
+  padding: 10px 10px;
+  font-family: "Verdana", Sans-serif;
+  margin: 0 auto;
+  text-align:center;
+  text-decoration: none;
+  display: inline-block;
+  width: 20em;
+  height: 4em;
+  font-size: 25px;
+  margin-top: 2.5em;
+}
+
+h1 {
+  color: white;
+  font-family: "Verdana", Sans-serif;
+  font-size: 55px;
+}
+
+h2 {
+
+  color: white;
+  font-family: "Verdana", Sans-serif;
+  font-size: 30px;
+}
+
+p1 {
+
+  color: white;
+  font-family: "Arial";
+  font-size: 20px;
+
+}
+
+
+
 </style>
 
 <head>
     <h1 align="center"> Amazon Roulette </h1>
       <h2 align = "center">  Are you feeling rich and lucky?? </h2>
 
+<<<<<<< HEAD
+      <link rel = "stylesheet" type = "css" href = "styleSheet.css">
+=======
     <link rel = "stylesheet" type = "text/css" href = "styleSheet.css">
     <script
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
     <script src="../static/ajax.js"></script>
+>>>>>>> origin/master
 </head>
 
 <body>
 
-  <div class="wrapper">
-      <button class="button">Sign Up</button>
-  </div>
+    <div class="wrapper">
+        <button class="button">Sign Into Your Amazon Account</button>
+    </div>
+
+    <p1>
+     Ever wanted to buy something on Amazon, not knowing what is is? <br>
+     Well, now's your chance <br>
+     Our revolutionary site does just that:
+   </p1>
+
+    <ul>
+        <li> Log into your amazon account </li>;
+        <li> Select the filters you want to contain your search into </li>;
+        <li> Voilaa ... Your package will be in the mail soon! </li>;
+   </ul>
+
 
   <button onclick="getProduct()">Get Product</button>
 
