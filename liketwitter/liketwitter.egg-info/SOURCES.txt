@@ -1,0 +1,9 @@
+MANIFEST.in
+liketwitter/__init__.py
+liketwitter/liketwitter.py
+liketwitter/schema.sql
+liketwitter.egg-info/PKG-INFO
+liketwitter.egg-info/SOURCES.txt
+liketwitter.egg-info/dependency_links.txt
+liketwitter.egg-info/requires.txt
+liketwitter.egg-info/top_level.txt
