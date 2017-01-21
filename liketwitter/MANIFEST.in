@@ -1,0 +1,3 @@
+graft liketwitter/templates
+graft liketwitter/static
+include liketwitter/schema.sql
