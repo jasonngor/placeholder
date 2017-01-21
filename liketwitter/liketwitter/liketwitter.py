@@ -52,7 +52,6 @@ def home():
     """Takes user to index.html"""
     return render_template("index.html")
 
-<<<<<<< HEAD
 @app.route('/signup')
 def signup():
     """Takes user to signup.html"""
@@ -65,9 +64,8 @@ def adduser():
     db.commit()
     flash("New user added.")
     return redirect(url_for("home"))
-=======
+
 @app.route('/login')
 def login():
     """Takes user to login.html"""
     return render_template("login.html")
->>>>>>> 554a85ceb70fa965ee094db5a52587d7d9f14927
