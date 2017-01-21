@@ -47,6 +47,12 @@ def initdb_command():
     init_db()
     print('Initialized the database.')
 
+def query_db(query, args=(), one=False):
+    cur = get_db().execute(query, args)
+    rv = cur.fetchall()
+    cur.close()
+    return (rv[0] if rv else None) if one else rv
+
 @app.route('/')
 def home():
     """Takes user to index.html"""
