@@ -38,14 +38,14 @@ def home():
     return render_template("index.html")
 
 def initAmazon():
-    # os.chdir("..") # change to file path
-    # os.chdir("..") # change to file path
-    # os.chdir("..") # change to file path
+    os.chdir("..") # change to file path
+    os.chdir("..") # change to file path
+    os.chdir("..") # change to file path
     f = open("pswd.txt", "r")
     st = f.read(200).strip("\n").split(" ")
-    # os.chdir("placeholder")
-    # os.chdir("AmazonRoulette")
-    # os.chdir("AmazonRoulette")
+    os.chdir("placeholder")
+    os.chdir("AmazonRoulette")
+    os.chdir("AmazonRoulette")
 
     AMAZON_ACCESS_KEY = st[0]
     AMAZON_SECRET_KEY = st[1]
