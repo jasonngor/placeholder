@@ -47,25 +47,25 @@ app.config.from_envvar('LIKETWITTER_SETTINGS', silent=True)
 #     init_db()
 #     print('Initialized the database.')
 #
-# @app.route('/')
-# def home():
-#     """Takes user to index.html"""
-#     return render_template("index.html")
-#
-# @app.route('/signup')
-# def signup():
-#     """Takes user to signup.html"""
-#     return render_template("signup.html")
-#
-# @app.route("/signup", methods=["POST"])
-# def adduser():
-#     db = get_db()
-#     db.execute("insert into user (username, password) values (?, ?)", [request.form["username"], request.form["password"]])
-#     db.commit()
-#     flash("New user added.")
-#     return redirect(url_for("home"))
+@app.route('/')
+def home():
+    """Takes user to index.html"""
+    return render_template("index.html")
 
-# @app.route('/login')
-# def login():
-#     """Takes user to login.html"""
-#     return render_template("login.html")
+@app.route('/signup')
+def signup():
+    """Takes user to signup.html"""
+    return render_template("signup.html")
+
+@app.route("/signup", methods=["POST"])
+def adduser():
+    db = get_db()
+    db.execute("insert into user (username, password) values (?, ?)", [request.form["username"], request.form["password"]])
+    db.commit()
+    flash("New user added.")
+    return redirect(url_for("home"))
+
+@app.route('/login')
+def login():
+    """Takes user to login.html"""
+    return render_template("login.html")
