@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang = "en"> <!-- Language parameters -->
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styleSheet.css" />
+    <title>Amazon Roulette</title>
+</head>
+
+<body>
+  <!-- <a href = "/login"> <p style = "text-align:right"> Login </p></a>
+  <a href = "/signup"> <p style = "text-align:right"> Sign Up </p></a> -->
+<div class="center">
+    <p>
+        <div id="price_filter">
+            <h3 class="filter_heading">Price:</h3>
+            <div class="forms">
+                <form action="">
+                    <input type="radio" name="price" value="Under $5">Under $5<br>
+                    <input type="radio" name="price" value="$5 to $10">$5 to $10<br>
+                    <input type="radio" name="price" value="$10 to $25">$10 to $25<br>
+                    <input type="radio" name="price" value="$25 to $50">$25 to $50<br>
+                    <input type="radio" name="price" value="$50 to $100">$50 to $100<br>
+                    <input type="radio" name="price" value="">Other $ <input type="text" name="price_min" size="4"/> to $ <input type="text" name="price_max" size="4"/>
+                </form>
+            </div>
+        </div>
+
+        <div id="category_filter">
+            <h3 class="filter_heading">Categories:</h3>
+            <div class="forms">
+                <script language="JavaScript">
+                function toggle(source) {
+                    checkboxes = document.getElementsByName('category');
+                    for(var i=0, n=checkboxes.length;i<n;i++) {
+                        checkboxes[i].checked = source.checked;
+                    }
+                }
+                </script>
+
+                <form action="">
+                    <input type="checkbox" value="" onClick="toggle(this)"/>Select All<br><br>
+                    <input type="checkbox" name="category" value="">Books<br>
+                    <input type="checkbox" name="category" value="">Digital Music<br>
+                    <input type="checkbox" name="category" value="">Cell Phones & Accessories<br>
+                    <input type="checkbox" name="category" value="">Home & Kitchen<br>
+                    <input type="checkbox" name="category" value="">Clothing, Shoes & Jewelry<br>
+                    <input type="checkbox" name="category" value="">Automotive Parts & Accessories<br>
+                    <input type="checkbox" name="category" value="">Industrial & Scientific<br>
+                    <input type="checkbox" name="category" value="">Electronics<br>
+                    <input type="checkbox" name="category" value="">Tools & Home Improvement<br>
+                    <input type="checkbox" name="category" value="">Sports & Outdoors<br>
+                    <input type="checkbox" name="category" value="">Collectibles & Fine Art<br>
+                    <input type="checkbox" name="category" value="">CDs & Vinyl<br>
+                    <input type="checkbox" name="category" value="">Office Products<br>
+                    <input type="checkbox" name="category" value="">Health, Houshold & Baby Care<br>
+                    <input type="checkbox" name="category" value="">Toys & Games<br>
+                    <input type="checkbox" name="category" value="">Arts, Crafts & Sewing<br>
+                    <input type="checkbox" name="category" value="">Patio, Lawn & Garden<br>
+                    <input type="checkbox" name="category" value="">Beauty & Personal Care<br>
+                    <input type="checkbox" name="category" value="">Baby<br>
+                    <input type="checkbox" name="category" value="">Kindle Store<br>
+                    <input type="checkbox" name="category" value="">Movies & TV<br>
+                    <input type="checkbox" name="category" value="">Appliances<br>
+                    <input type="checkbox" name="category" value="">Grocery & Gourmet Food<br>
+                    <input type="checkbox" name="category" value="">Pet Supplies<br>
+                    <input type="checkbox" name="category" value="">Apps & Games<br>
+                    <input type="checkbox" name="category" value="">Handmade<br>
+                    <input type="checkbox" name="category" value="">Musical Instruments<br>
+                    <input type="checkbox" name="category" value="">Video Games<br>
+                    <input type="checkbox" name="category" value="">Software<br>
+                    <input type="checkbox" name="category" value="">Magazine Subscriptions<br>
+                    <input type="checkbox" name="category" value="">Courses<br>
+                    <input type="checkbox" name="category" value="">Alexa Skills<br>
+                    <input type="checkbox" name="category" value="">Kindle Accessories<br>
+                    <input type="checkbox" name="category" value="">Gift Cards<br>
+                    <input type="checkbox" name="category" value="">Home & Business Services<br>
+        </div>
+        <button type="button">SEARCH</button>
+    </p>
+</div>
+
+</body>
+</html>

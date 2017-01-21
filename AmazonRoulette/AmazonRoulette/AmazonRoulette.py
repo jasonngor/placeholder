@@ -3,69 +3,58 @@ import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, abort, \
      render_template, flash
 from werkzeug import generate_password_hash, check_password_hash
+from amazon.api import AmazonAPI
+from random import randint
+import json
+
+# import os
+# from amazon.api import AmazonAPI
+# os.chdir("..") # change to file path
+#
+# f = open("pswd.txt", "r")
+# st = f.read(200).strip("\n").split(" ")
+#
+# AMAZON_ACCESS_KEY = st[0]
+# AMAZON_SECRET_KEY = st[1]
+# AMAZON_ASSOC_TAG  = st[2]
+#
+# amazon = AmazonAPI(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_ASSOC_TAG)
+# product = amazon.lookup(ItemId='B00EOE0WKQ')
+# print(product.title)
 
 app = Flask(__name__) # create the application instance
 app.config.from_object(__name__) # load config from this file, liketwitter.py
+amazon = AmazonAPI(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_ASSOC_TAG)
 
 # Load default config and override config from an environment variable
 app.config.update(dict(
-    DATABASE=os.path.join(app.root_path, 'liketwitter.db'),
+    DATABASE=os.path.join(app.root_path, 'amazonroulette.db'),
     SECRET_KEY='development key',
     USERNAME='admin',
     PASSWORD='default'
 ))
-app.config.from_envvar('LIKETWITTER_SETTINGS', silent=True)
+app.config.from_envvar('AMAZONROULETTE_SETTINGS', silent=True)
 
-# def connect_db():
-#     """Connects to the specific database."""
-#     rv = sqlite3.connect(app.config['DATABASE'])
-#     rv.row_factory = sqlite3.Row
-#     return rv
-#
-# def get_db():
-#     """Opens a new database connection for the application if one doesn't already exist
-#     """
-#     if not hasattr(g, "sqlite_db"):
-#         g.sqlite_db = connect_db()
-#     return g.sqlite_db
-
-# @app.teardown_appcontext
-# def close_db(error):
-#     """Closes the database at the end of the request."""
-#     if hasattr(g, 'sqlite_db'):
-#         g.sqlite_db.close()
-#
-# def init_db():
-#     db = get_db()
-#     with app.open_resource('schema.sql', mode='r') as f:
-#         db.cursor().executescript(f.read())
-#     db.commit()
-#
-# @app.cli.command('initdb')
-# def initdb_command():
-#     """Initializes the database."""
-#     init_db()
-#     print('Initialized the database.')
-#
-@app.route('/')
+@app.route("/")
 def home():
-    """Takes user to index.html"""
     return render_template("index.html")
 
-@app.route('/signup')
-def signup():
-    """Takes user to signup.html"""
-    return render_template("signup.html")
-
-@app.route("/signup", methods=["POST"])
-def adduser():
-    db = get_db()
-    db.execute("insert into user (username, password) values (?, ?)", [request.form["username"], request.form["password"]])
-    db.commit()
-    flash("New user added.")
-    return redirect(url_for("home"))
-
-@app.route('/login')
-def login():
-    """Takes user to login.html"""
-    return render_template("login.html")
+@app.route("/get-product", methods=[GET])
+def getproduct():
+    found = False
+    product = None
+    while not found:
+        asin = ""
+        letterstring = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        for _ in range(10):
+            randomnum = randint(0,35)
+            if (randomnum <= 9):
+                asin += str(randomnum)
+            else:
+                asin += letterstring[randomnum - 10]
+        try:
+            product = amazon.lookup(asin)
+            found = True
+        except Exception:
+            found = False
+    return json.dump(product)
