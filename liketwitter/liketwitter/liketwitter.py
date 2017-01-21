@@ -45,3 +45,8 @@ def initdb_command():
     """Initializes the database."""
     init_db()
     print('Initialized the database.')
+
+@app.route('/')
+def home():
+    """Takes user to index.html"""
+    return render_template("index.html")
