@@ -54,8 +54,11 @@ def initAmazon():
     amazon = AmazonAPI(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_ASSOC_TAG)
     return amazon
 
+def getSpecificProduct():
+    pass
+
 @app.route("/get-product", methods=[GET])
-def getproduct():
+def getRandomProduct():
     found = False
     product = None
     while not found:
