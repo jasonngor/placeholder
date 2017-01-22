@@ -74,3 +74,38 @@ def initAmazon():
 #         except Exception:
 #             found = False
 #     return json.dump(product)
+    return amazon
+
+@app.route('/')
+    def home():
+        """Takes user to index.html"""
+        return render_template("index.html")
+def getSpecificProduct():
+    pass
+
+@app.route("/get-product", methods=[GET])
+def getRandomProduct():
+    found = False
+    product = None
+    while not found:
+        asin = ""
+        letterstring = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        for _ in range(10):
+            randomnum = randint(0,35)
+            if (randomnum <= 9):
+                asin += str(randomnum)
+            else:
+                asin += letterstring[randomnum - 10]
+        try:
+            product = amazon.lookup(asin)
+            found = True
+        except Exception:
+            found = False
+    return json.dump(product)
+
+
+
+@app.route('/searchPage')
+    def signup():
+        """Takes user to signup.html"""
+        return render_template("signup.html")

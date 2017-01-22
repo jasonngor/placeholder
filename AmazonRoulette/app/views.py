@@ -3,7 +3,7 @@ from flask import render_template, redirect
 
 @app.route('/')
 @app.route('/index')
-def index():
+def home():
     return render_template("/index.html")
 
 @app.route('/searchpage')
