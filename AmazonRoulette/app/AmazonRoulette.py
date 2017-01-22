@@ -54,6 +54,11 @@ def initAmazon():
     amazon = AmazonAPI(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_ASSOC_TAG)
     return amazon
 
+@app.route('/')
+    def home():
+        """Takes user to index.html"""
+        return render_template("index.html")
+
 @app.route("/get-product", methods=[GET])
 def getproduct():
     found = False
@@ -73,3 +78,10 @@ def getproduct():
         except Exception:
             found = False
     return json.dump(product)
+
+
+
+@app.route('/searchPage')
+    def signup():
+        """Takes user to signup.html"""
+        return render_template("signup.html")
