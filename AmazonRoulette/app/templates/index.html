@@ -1,103 +1,16 @@
 <!DOCTYPE html>
 <html lang = "en"> <!-- Language parameters -->
 
-<style>
-
-html {
-  height: 100%
-}
-
-body {
-  height = 100%;
-  background: linear-gradient(180deg, #2F4F4F 50%, #A9A9A9 50%);
-
-  /*background: #2F4F4F;*/
-}
-
-.button {
-  background-color: #393f47; /* Bluish-Gray */
-  border: none;
-  position: center;
-  top: 75%;
-  left: 50%;
-  color: white;
-  padding: 10px 10px;
-  font-family: "Verdana", Sans-serif;
-  margin: 0 auto;
-  text-align: center;
-  text-decoration: none;s
-  display: inline-block;
-  width: 20em;
-  height: 4em;
-  font-size: 25px;
-  /*margin-top: -10.00em;
-  margin-left: -10.00em;*/
-}
-
-h1 {
-  color: white;
-  font-family: "Verdana", Sans-serif;
-  font-size: 55px;
-}
-
-h2 {
-
-  color: white;
-  font-family: "Verdana", Sans-serif;
-  font-size: 30px;
-}
-
-p1 {
-
-  color: white;
-  font-family: "Arial";
-  font-size: 25px;
-  position: relative;
-  bottom: -15.00em;
-  text-align: center;
-  text-decoration: italic;
-
-
-}
-
-ul {
-
-  color: white;
-  font-family: "Arial";
-  font-size: 20px;
-  text-align: right;
-  position: relative;
-  bottom: -18.00em;
-  direction: rtl;
-
-}
-
-ul li a {
-  direction: ltr; unicode-bidi: embed;
-}
-
-
-</style>
-
 <head>
+    <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static',filename='styles/styleSheet.css') }}" />
     <h1 align="center"> Amazon Roulette </h1>
-      <h2 align = "center">  Are you feeling rich and lucky?? </h2>
-
-    <link rel = "stylesheet" type = "text/css" href = "styleSheet.css">
-    <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-    <script src="../static/ajax.js"></script>
-
+    <h2 align = "center">  Are you feeling rich and lucky?? </h2>
 </head>
 
 <body>
-
     <div class="wrapper">
         <a href = "/searchpage"><button class="button">Sign Into Your Amazon Account</button>
         </a>
-
     </div>
 
     <div class="wrapper">
@@ -116,10 +29,6 @@ ul li a {
         <li> Voilaa ... Your package will be in the mail soon! </li> <br>
    </ul>
 </div>
-
-
-  <!-- <button onclick="getProduct()">Get Product</button>
-
 </body>
 
 

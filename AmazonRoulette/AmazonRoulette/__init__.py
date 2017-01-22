@@ -1,1 +1,0 @@
-from .AmazonRoulette import app
