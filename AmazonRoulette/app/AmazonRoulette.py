@@ -38,14 +38,14 @@ def home():
     return render_template("index.html")
 
 def initAmazon():
-    # os.chdir("..") # change to file path
-    # os.chdir("..") # change to file path
-    # os.chdir("..") # change to file path
+    os.chdir("..") # change to file path
+    os.chdir("..") # change to file path
+    os.chdir("..") # change to file path
     f = open("pswd.txt", "r")
     st = f.read(200).strip("\n").split(" ")
-    # os.chdir("placeholder")
-    # os.chdir("AmazonRoulette")
-    # os.chdir("AmazonRoulette")
+    os.chdir("placeholder")
+    os.chdir("AmazonRoulette")
+    os.chdir("AmazonRoulette")
 
     AMAZON_ACCESS_KEY = st[0]
     AMAZON_SECRET_KEY = st[1]
@@ -54,13 +54,18 @@ def initAmazon():
     amazon = AmazonAPI(AMAZON_ACCESS_KEY, AMAZON_SECRET_KEY, AMAZON_ASSOC_TAG)
     return amazon
 
+<<<<<<< HEAD
 @app.route('/')
     def home():
         """Takes user to index.html"""
         return render_template("index.html")
+=======
+def getSpecificProduct():
+    pass
+>>>>>>> f1d71aaa85f1fa33620041a81fb06604ad0432d0
 
 @app.route("/get-product", methods=[GET])
-def getproduct():
+def getRandomProduct():
     found = False
     product = None
     while not found:
