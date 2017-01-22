@@ -2,12 +2,14 @@
 .wrapper {
   text-align: center;
 }
+
 <<<<<<< HEAD
 =======
 
 .button {
   position: absolute;
   top: 50%;
+  left: 50%;
 }
 
 .center {
